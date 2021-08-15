@@ -35,17 +35,26 @@
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
+        <title>Sign In</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        <div class="telaLogin">
+            <div class="imgLogin">
+                <img src="../www/img/Login img.png" alt="Login" width="150">
             </div>
+                <input type="text" class="loginSen" placeholder="Login">
+                <input type="password" class="loginSen" placeholder="Senha">
+                <div>
+                    <button class="loginBut">Entrar</button>
+                    <button class="loginBut-criar">Criar conta</button>
+                </div>
+                <div>
+                    <a href="">Esqueci minha senha</a>
+                </div>
         </div>
+
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>
+
     </body>
 </html>
