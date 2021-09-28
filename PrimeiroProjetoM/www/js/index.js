@@ -27,8 +27,8 @@ function entrar(){
     console.log("function entrar(){...");
     console.log(db);
 
-    let login = document.getElementById("loginSen").value;
-    let pass = document.getElementById("loginSen").value;
+    let login = document.getElementById("login1").value;
+    let pass = document.getElementById("senha1").value;
 
         db.transaction(function(tx) {
             tx.executeSql('INSERT INTO usuarios VALUES (?,?)', [login, pass]);
@@ -38,7 +38,7 @@ function entrar(){
             alert('Insercao realizada com sucesso!!!');
         });
     }
-}
+
 
 function criarconta(){
     console.log("function criar(){...");
@@ -83,8 +83,8 @@ function onDeviceReady() {
 
     inicializarbanco();
 
-    document.getElementById("loginBut").addEventListener("click", app.entrar);
-    document.getElementById("loginBut-criar").addEventListener("click", app.criarconta);
+    document.getElementById("entrarc").addEventListener("click", entrar);
+    document.getElementById("criarc").addEventListener("click", criarconta);
     this.receivedEvent('deviceready');
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
