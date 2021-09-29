@@ -19,12 +19,12 @@
 
 // Wait for the deviceready event before using any of Cordova's device APIs.
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
-document.addEventListener('deviceready', onDeviceReady, false);
+document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
 
 let db;
 
-function entrar(){
-    console.log("function entrar(){...");
+function inserir(){
+    console.log("function inserir(){...");
     console.log(db);
 
     let login = document.getElementById("login1").value;
@@ -40,8 +40,8 @@ function entrar(){
     }
 
 
-function criarconta(){
-    console.log("function criar(){...");
+function listar(){
+    console.log("function listar(){...");
     console.log(db);
 
     db.executeSql(
@@ -83,10 +83,8 @@ function onDeviceReady() {
 
     inicializarbanco();
 
-    document.getElementById("entrarc").addEventListener("click", entrar);
-    document.getElementById("criarc").addEventListener("click", criarconta);
-    this.receivedEvent('deviceready');
+    document.getElementById("inserirc").addEventListener("click", inserir);
+    document.getElementById("listarc").addEventListener("click", listar);
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
 }
